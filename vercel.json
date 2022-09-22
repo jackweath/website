@@ -1,0 +1,22 @@
+{
+    "rewrites": [
+        {
+            "source": "/content-script.js",
+            "destination": "https://al.jackweath.com/umami.js"
+          },
+          {
+            "source": "/api/collect",
+            "destination": "https://al.jackweath.com/api/collect"
+          }
+    ],
+    "redirects": [
+        {
+          "source": "/twitter",
+          "destination": "https://twitter.com/jackaweatherley"
+        },
+        {
+          "source": "/github",
+          "destination": "https://github.com/JackWeath/"
+        }
+      ]
+}

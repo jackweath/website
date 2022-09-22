@@ -1,0 +1,46 @@
+<section
+  id="dateTime"
+  onclick="switchTimeZone()"
+  class="flex flex-col sm:flex-row mt-8"
+>
+  <span id="spanDate"></span>
+  <span id="spanTime"></span>
+</section>
+
+<script lang="js">
+  var gmtTimeZone = false;
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const switchTimeZone = () => {
+    const dateTimeTest = new Date();
+    if (dateTimeTest.getTimezoneOffset() !== 0) {
+      gmtTimeZone = !gmtTimeZone;
+    }
+  };
+  const updateDateTime = () => {
+    var curDateTime;
+    gmtTimeZone
+      ? (curDateTime = new Date())
+      : (curDateTime = new Date(
+          new Date().getTime() - new Date().getTimezoneOffset() * 60000
+        ));
+    var dateTime = document.getElementById("dateTime");
+    dateTime.innerHTML = `<span class="mr-0 sm:mr-2">${
+      months[curDateTime.getMonth()]
+    } ${curDateTime.getDate()}, ${curDateTime.getFullYear()}</span><span>${curDateTime.toTimeString()}</span>`;
+  };
+  updateDateTime();
+  setInterval(updateDateTime, 1000);
+</script>
