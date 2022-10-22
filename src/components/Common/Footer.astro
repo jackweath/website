@@ -1,15 +1,12 @@
 ---
-import DarkMode from "./DarkMode.astro";
+import DarkMode from './DarkMode.astro';
 
 const today = new Date();
 ---
 
-<footer
-  class="text-center flex flex-row justify-center items-center py-8 mt-auto"
->
-  <DarkMode class="mr-3" />
-  {today.getFullYear()} - Made with ❤️ by Jack Weatherley - <a
-    class="underline ml-3"
-    href="/privacy-policy">Privacy Policy</a
-  >
+<footer class="text-center flex flex-row justify-center items-center py-8 mt-auto">
+    <DarkMode class="mr-3" />
+    {today.getFullYear()} - Made with ❤️<span class="hidden sm:inline mx-2">
+        by Jack Weatherley</span
+    > - <a class="underline ml-3" href="/privacy-policy">Privacy Policy</a>
 </footer>
